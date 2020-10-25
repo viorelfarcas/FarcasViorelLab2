@@ -9,17 +9,21 @@
     <Grid>
         <Menu x:Name="mnuMain" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top"
 Width="131">
-            <MenuItem Header="File">
-                <MenuItem Header="Exit"/>
+            <MenuItem Header="File" Click="exitToolStripMenuItem_Click">
+                <MenuItem Header="Exit" Click="exitToolStripMenuItem_Click"/>
             </MenuItem>
             <MenuItem Header="_Doughnuts">
                 <MenuItem Header="Make">
                     <MenuItem Header="Raised">
-                        <MenuItem x:Name="glazedMenuItem" Header="Glazed"/>
-                        <MenuItem x:Name="sugarMenuItem" Header="Sugar"/>
+                        <MenuItem x:Name="glazedToolStripMenuItem" Header="Glazed"
+Click="glazedToolStripMenuItem_Click" IsCheckable="True"/>
+                        <MenuItem x:Name="sugarToolStripMenuItem" Header="Sugar"
+IsCheckable="True" Click="sugarToolStripMenuItem_Click"/>
                     </MenuItem>
                     <MenuItem Header="Filled"/>
                 </MenuItem>
+                <MenuItem x:Name="mnuStop" Header="Stop"
+Click="stopToolStripMenuItem_Click"/>
             </MenuItem>
         </Menu>
         <Label x:Name="lblTitle_" Content="Doughnuts - Bake &amp; Sale" FontSize="24" FontWeight="Bold" Margin="27,16,-27,-16"/>
@@ -44,7 +48,7 @@ Width="131">
         <GroupBox x:Name="gbSale_" Header="Current Sale " FontWeight="Bold" Margin="27,214,33,15">
             <Canvas>
                 <Label x:Name="lblQuantity" Content="Quantity " Canvas.Left="21" Canvas.Top="10"/>
-                <TextBox x:Name="txtQuantity" Text="0" TextWrapping="Wrap" Width="120" Canvas.Left="84" Canvas.Top="14"/>
+                <TextBox x:Name="txtQuantity" Text="0" TextWrapping="Wrap" Width="120" Canvas.Left="84" Canvas.Top="14" KeyUp="txtQuantity_KeyPress"/>
                 <Label x:Name="lblType" Content="Type " Canvas.Left="227" Canvas.Top="10"/>
                 <ComboBox x:Name="cmbType" Width="120" Canvas.Left="268" Canvas.Top="12"/>
                 <Label x:Name="lblPrice" Content="Price" Canvas.Left="408" Canvas.Top="10" RenderTransformOrigin="0.14,0.651"/>
